@@ -85,7 +85,7 @@ export const Progress = ({ callback }) => {
           <Text
             textAlign={"center"}
             mt='15px'
-            mb="65px"
+            mb="40px"
             fontWeight="700"
             fontStyle={"normal"}
             fontSize={"30px"}
@@ -93,7 +93,7 @@ export const Progress = ({ callback }) => {
           >
             SECURELY SWAP YOUR PIXELMON NFT(S) PEER TO PEER WITH 0% FEES
           </Text>
-          <Grid mx="35vh" templateColumns="repeat(3, 1fr)">
+          <Grid mx="35vh" mb='10px' templateColumns="repeat(3, 1fr)">
             {new Array(3).fill(0).map((item, index) => {
               return (
                 <GridItem
@@ -104,8 +104,8 @@ export const Progress = ({ callback }) => {
                 >
                   <Box
                     position="absolute"
-                    top="-25px"
-                    left="-90px"
+                    top="-5px"
+                    left="-75px"
                     textAlign="center"
                   >
                     <Flex
@@ -144,8 +144,8 @@ export const Progress = ({ callback }) => {
                     <Box
                       key={4}
                       position="absolute"
-                      top="-25px"
-                      right="-108px"
+                      top="-5px"
+                      right="-90px"
                       textAlign="center"
                     >
                       <Flex
