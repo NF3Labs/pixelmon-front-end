@@ -4881,9 +4881,9 @@ next@12.3.1:
     "@next/swc-win32-ia32-msvc" "12.3.1"
     "@next/swc-win32-x64-msvc" "12.3.1"
 
-nf3-sdk@./backend/nf3-sdk-v1.0.13.tgz:
-  version "1.0.13"
-  resolved "./backend/nf3-sdk-v1.0.13.tgz#adcfca48eed9e0788976b5095e00d1586b8b346e"
+nf3-sdk@./backend/nf3-sdk-v1.0.14.tgz:
+  version "1.0.14"
+  resolved "./backend/nf3-sdk-v1.0.14.tgz#071b6c966b4c9c22852df3f4bfb70abf6671b533"
   dependencies:
     axios "^1.4.0"
     ethers "~5.7.2"
