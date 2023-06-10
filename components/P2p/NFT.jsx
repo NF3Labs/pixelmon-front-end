@@ -93,12 +93,11 @@ export const NFT = ({
     let isIn = data.filter((i) => {
       return i.nft.contract === item.nft.contract && i.nft.token === item.nft.token && i.nft.name === item.nft.name;
     });
-    if (isIn.length > 0) {
+    if (isIn.length > length) {
       const newData = data.filter(
         (i) => i.nft.contract !== item.nft.contract || i.nft.token !== item.nft.token || i.nft.name !== item.nft.name
       );
-      for (let j = 0; j < quantity; j++)
-        newData.push(isIn[0]);
+      newData.push(isIn[0]);
       userContext?.dispatchSelectedActions({
         type: type ? "HANDLE_P2P_MY_NFT" : "HANDLE_P2P_NFT",
         payload: newData,
