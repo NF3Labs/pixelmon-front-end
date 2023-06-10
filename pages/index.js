@@ -452,7 +452,7 @@ export default function ActiveOptions() {
     axios.post('/api/post/postDeclineP2P', {
       params: {
         address: address,
-        listing: list[selectIndex].id
+        listingId: list[selectIndex].id
       }
     })
     // sdk.api.accounts.declineP2P(address, list[selectIndex].id)
@@ -472,7 +472,7 @@ export default function ActiveOptions() {
         window.localStorage.setItem("nf3marketplace-connector-choice", null);
         window.localStorage.removeItem("CSRF");
 
-        console.log(error);
+        console.log(err);
         errorToast("Action Failed", "Could not decline offer");
       });
   };

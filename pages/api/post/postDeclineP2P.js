@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const { address, listingId } = req.body.params;
     const sdk = await getBackendSDK();
 
-    const response = await sdk.api.accounts.declineP2Ps(
+    const response = await sdk.api.accounts.declineP2P(
       address,
       listingId
     );
