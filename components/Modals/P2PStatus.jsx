@@ -97,7 +97,15 @@ export const P2PStatus = ({
           let temp = nfts.filter((item) => item.nft.token === x.nft.token);
 
           if (temp.length > 0) {
-            nRet++;
+            if (x.nft.type === 'ERC1155') {
+              if (x.quantity < temp.length) {
+                nRet = 0;
+              } else {
+                nRet += temp.length;
+              }
+            } else {
+              nRet++;
+            }
           }
         });
       });
