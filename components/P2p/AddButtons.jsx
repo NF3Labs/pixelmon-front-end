@@ -40,7 +40,7 @@ export const AddButtons = ({ address, type, allowETH }) => {
             i.contract === contract && (allowETH || contract !== ETH)
         )
     );
-  const tokenList = appContext?.tokenList[chain?.id];
+  const tokenList = appContext?.tokenList?.[chain?.id];
 
   const handleConfirm = (contract, amount) => {
     let data = type

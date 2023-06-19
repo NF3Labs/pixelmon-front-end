@@ -16,6 +16,7 @@ import { useLoadImage } from "../../hooks/useLoadImage";
 import { FlagP2P } from '../Icons/FlagP2P';
 import { PolyP2P } from '../Icons/PolyP2P';
 import { EthP2P } from '../Icons/EthP2P';
+import { Minus } from '../Icons/Minus';
 
 export const NFT = ({
   item,
@@ -114,6 +115,27 @@ export const NFT = ({
       });
     }
   };
+
+  const handleRemoveNft = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    let data = type ? userContext?.selectedActionsState?.p2p_my_nfts : userContext?.selectedActionsState?.p2p_nfts;
+    const multi = data.filter(
+      (i) => i.nft.contract === item.nft.contract && i.nft.token === item.nft.token
+    );
+    let newData = data.filter(
+      (i) => i.nft.contract !== item.nft.contract || i.nft.token !== item.nft.token
+    );
+    if (multi?.length > 1) {
+      console.log(multi?.length)
+      newData.push(multi?.[0]);
+    }
+    userContext?.dispatchSelectedActions({
+      type: type ? "HANDLE_P2P_MY_NFT" : "HANDLE_P2P_NFT",
+      payload: newData,
+    });
+  }
 
   const { isLoaded } = useLoadImage(item ? item.nft.thumbnail_url : '');
 
@@ -249,6 +271,17 @@ export const NFT = ({
           {isEdit && selectedLength.length !== 0 && <Box position='absolute' top={'14px'} right={'19px'}>
             <CheckNFT />
           </Box>}
+          {isEdit && selectedLength.length !== 0 &&
+            <Box
+              position='absolute'
+              top={'11px'}
+              left={'16px'}
+              zIndex={2}
+              borderRadius='full'
+              onClick={(e) => handleRemoveNft(e)}
+            >
+              <Minus width="30px" height="30px" />
+            </Box>}
           <Box position='absolute' top={'14px'} left={'19px'} w='full' h='full'>
             {(item && item.nft.chain === CHAIN.toString()) ? <EthP2P /> : <PolyP2P />}
             <Box h='3px' />
