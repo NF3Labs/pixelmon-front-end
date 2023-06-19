@@ -128,7 +128,8 @@ export const NFT = ({
       (i) => i.nft.contract !== item.nft.contract || i.nft.token !== item.nft.token
     );
     if (multi?.length > 1) {
-      newData.push(multi?.[0]);
+      for(let i = 0; i < multi?.length - 1; i++)
+        newData.push(multi?.[0]);
     }
     userContext?.dispatchSelectedActions({
       type: type ? "HANDLE_P2P_MY_NFT" : "HANDLE_P2P_NFT",
