@@ -128,7 +128,6 @@ export const NFT = ({
       (i) => i.nft.contract !== item.nft.contract || i.nft.token !== item.nft.token
     );
     if (multi?.length > 1) {
-      console.log(multi?.length)
       newData.push(multi?.[0]);
     }
     userContext?.dispatchSelectedActions({
