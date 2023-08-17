@@ -84,10 +84,10 @@ export const P2PStatus = ({
       if (address === "" || nfts.length === 0) return 0;
 
       setIsLoading(true);
-      const response = await axios.get('/api/get/getWalletNfts', {
+      const response = await axios.get("/api/get/getWalletNfts", {
         params: {
           address: address,
-        }
+        },
       });
 
       const returnedData = response.data.data;
@@ -97,7 +97,7 @@ export const P2PStatus = ({
           let temp = nfts.filter((item) => item.nft.token === x.nft.token);
 
           if (temp.length > 0) {
-            if (x.nft.type === 'ERC1155') {
+            if (x.nft.type === "ERC1155") {
               if (x.quantity < temp.length) {
                 nRet = 0;
               } else {
@@ -315,15 +315,22 @@ export const P2PStatus = ({
                               backgroundSize={"contain"}
                               borderRadius="8px"
                             />
-                            {/* <Link href={chain !== CHAIN ? `https://polygonscan.com/tx/${tokenContext?.txnHash}` : `https://etherscan.io/tx/${tokenContext?.txnHash}`} target="_blank"> */}
                             <Link
+                              href={
+                                chain !== CHAIN
+                                  ? `https://polygonscan.com/tx/${tokenContext?.txnHash}`
+                                  : `https://etherscan.io/tx/${tokenContext?.txnHash}`
+                              }
+                              target="_blank"
+                            >
+                              {/* <Link
                               href={
                                 chain !== CHAIN
                                   ? `https://mumbai.polygonscan.com/tx/${tokenContext?.txnHash}`
                                   : `https://goerli.etherscan.io/tx/${tokenContext?.txnHash}`
                               }
                               target="_blank"
-                            >
+                            > */}
                               <Text
                                 ml="12px"
                                 fontSize="12px"
@@ -407,15 +414,22 @@ export const P2PStatus = ({
                               backgroundSize={"contain"}
                               borderRadius="8px"
                             />
-                            {/* <Link href={chain !== CHAIN ? `https://polygonscan.com/tx/${tokenContext?.txnHash}` : `https://etherscan.io/tx/${tokenContext?.txnHash}`} target="_blank"> */}
                             <Link
+                              href={
+                                chain !== CHAIN
+                                  ? `https://polygonscan.com/tx/${tokenContext?.txnHash}`
+                                  : `https://etherscan.io/tx/${tokenContext?.txnHash}`
+                              }
+                              target="_blank"
+                            >
+                              {/* <Link
                               href={
                                 chain !== CHAIN
                                   ? `https://mumbai.polygonscan.com/tx/${tokenContext?.txnHash}`
                                   : `https://goerli.etherscan.io/tx/${tokenContext?.txnHash}`
                               }
                               target="_blank"
-                            >
+                            > */}
                               <Text
                                 ml="12px"
                                 fontSize="12px"
@@ -487,15 +501,22 @@ export const P2PStatus = ({
                               backgroundSize={"contain"}
                               borderRadius="8px"
                             />
-                            {/* <Link href={chain !== CHAIN ? `https://polygonscan.com/tx/${tokenContext?.txnHash}` : `https://etherscan.io/tx/${tokenContext?.txnHash}`} target="_blank"> */}
                             <Link
+                              href={
+                                chain !== CHAIN
+                                  ? `https://polygonscan.com/tx/${tokenContext?.txnHash}`
+                                  : `https://etherscan.io/tx/${tokenContext?.txnHash}`
+                              }
+                              target="_blank"
+                            >
+                              {/* <Link
                               href={
                                 chain !== CHAIN
                                   ? `https://mumbai.polygonscan.com/tx/${tokenContext?.txnHash}`
                                   : `https://goerli.etherscan.io/tx/${tokenContext?.txnHash}`
                               }
                               target="_blank"
-                            >
+                            > */}
                               <Text
                                 ml="12px"
                                 fontSize="12px"
@@ -610,15 +631,22 @@ export const P2PStatus = ({
                       backgroundSize={"contain"}
                       borderRadius="8px"
                     />
-                    {/* <Link href={chain !== CHAIN ? `https://polygonscan.com/tx/${item?.transactions[0]}` : `https://etherscan.io/tx/${item?.transactions[0]}`} target="_blank"> */}
                     <Link
+                      href={
+                        chain !== CHAIN
+                          ? `https://polygonscan.com/tx/${item?.transactions[0]}`
+                          : `https://etherscan.io/tx/${item?.transactions[0]}`
+                      }
+                      target="_blank"
+                    >
+                      {/* <Link
                       href={
                         chain !== CHAIN
                           ? `https://mumbai.polygonscan.com/tx/${item?.transactions[0]}`
                           : `https://goerli.etherscan.io/tx/${item?.transactions[0]}`
                       }
                       target="_blank"
-                    >
+                    > */}
                       <Text
                         ml="12px"
                         fontSize="12px"
@@ -658,11 +686,19 @@ export const P2PStatus = ({
                       <Link
                         href={
                           chain !== CHAIN
+                            ? `https://polygonscan.com/tx/${item?.transactions[0]}`
+                            : `https://etherscan.io/tx/${item?.transactions[0]}`
+                        }
+                        target="_blank"
+                      >
+                        {/* <Link
+                        href={
+                          chain !== CHAIN
                             ? `https://mumbai.polygonscan.com/tx/${item?.transactions[0]}`
                             : `https://goerli.etherscan.io/tx/${item?.transactions[0]}`
                         }
                         target="_blank"
-                      >
+                      > */}
                         <Text
                           ml="12px"
                           fontSize="12px"

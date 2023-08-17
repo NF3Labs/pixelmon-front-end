@@ -10,15 +10,15 @@ import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { createStandaloneToast } from "@chakra-ui/toast";
 import theme from "../styles/theme";
 import { ConnectKitProvider, getDefaultClient } from "connectkit";
-import { WagmiConfig, createClient, configureChains, goerli } from "wagmi";
-import { polygonMumbai } from "wagmi/chains";
+import { WagmiConfig, createClient, configureChains, mainnet } from "wagmi";
+import { polygon } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { Layout } from "../components/Layout/Layout";
 import { AppWrapper } from "../contexts/App";
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [goerli, polygonMumbai],
+  [mainnet, polygon],
   [
     alchemyProvider({
       apiKey: process.env.NEXT_PUBLIC_ALCHEMY_KEY,
@@ -32,7 +32,7 @@ const wagmiClient = createClient(
   getDefaultClient({
     appName: "NF3 Marketplace",
     alchemyId: process.env.NEXT_PUBLIC_ALCHEMY_KEY,
-    chains: [goerli, polygonMumbai],
+    chains: [mainnet, polygon],
     autoConnect: false,
   }),
   {

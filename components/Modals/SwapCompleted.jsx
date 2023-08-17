@@ -8,7 +8,7 @@ import {
   ModalOverlay,
   ModalContent,
   Image,
-  Link
+  Link,
 } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import { CheckGreen } from "../Icons/CheckGreen";
@@ -35,7 +35,7 @@ export const SwapCompleted = ({
           <Flex>
             <Spacer />
             <Box onClick={onClose}>
-              <CloseIcon w='60px' />
+              <CloseIcon w="60px" />
             </Box>
           </Flex>
           <Text mt="10px" fontSize="24px" fontWeight="bold" textAlign="center">
@@ -47,25 +47,39 @@ export const SwapCompleted = ({
             textAlign="center"
             color={useColorModeValue("content.light", "content.dark")}
           >
-            Your P2P swap with {getBeautifulAddress(data.address)} has been completed!
+            Your P2P swap with {getBeautifulAddress(data.address)} has been
+            completed!
           </Text>
-          <Flex justify='center' mt='24px'>
-            <CheckGreen width='60px' height='60px' />
+          <Flex justify="center" mt="24px">
+            <CheckGreen width="60px" height="60px" />
           </Flex>
-          <Flex mt='24px'>
-            <Flex mx='auto' alignItems={'center'}>
+          <Flex mt="24px">
+            <Flex mx="auto" alignItems={"center"}>
               <Image
                 src={`/images/transaction.png`}
-                h='20px'
+                h="20px"
                 // w='100%'
                 backgroundPosition={"center"}
                 backgroundRepeat={"no-repeat"}
                 backgroundSize={"contain"}
-                borderRadius='8px'
+                borderRadius="8px"
               />
-              {/* <Link href={chain !== CHAIN ? `https://polygonscan.com/tx/${data.hash}` : `https://etherscan.io/tx/${data.hash}`} target="_blank"> */}
-              <Link href={chain !== CHAIN ? `https://mumbai.polygonscan.com/tx/${data.hash}` : `https://goerli.etherscan.io/tx/${data.hash}`} target="_blank">
-                <Text ml='12px' fontSize='12px' color={input} noOfLines={1} w='400px'>
+              <Link
+                href={
+                  chain !== CHAIN
+                    ? `https://polygonscan.com/tx/${data.hash}`
+                    : `https://etherscan.io/tx/${data.hash}`
+                }
+                target="_blank"
+              >
+                {/* <Link href={chain !== CHAIN ? `https://mumbai.polygonscan.com/tx/${data.hash}` : `https://goerli.etherscan.io/tx/${data.hash}`} target="_blank"> */}
+                <Text
+                  ml="12px"
+                  fontSize="12px"
+                  color={input}
+                  noOfLines={1}
+                  w="400px"
+                >
                   {data.hash}
                 </Text>
               </Link>
